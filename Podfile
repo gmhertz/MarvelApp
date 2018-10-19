@@ -7,6 +7,7 @@ target 'MarvelApp' do
 
   pod 'Alamofire', '~> 4.7'
   pod 'Moya', '~> 11.0'
+  pod 'CryptoSwift'
 
   target 'MarvelAppTests' do
     inherit! :search_paths
