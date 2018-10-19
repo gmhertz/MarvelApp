@@ -16,6 +16,7 @@
 		E846401721797FA300420147 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E846401521797FA300420147 /* LaunchScreen.storyboard */; };
 		E846402221797FA300420147 /* MarvelAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E846402121797FA300420147 /* MarvelAppTests.swift */; };
 		E846402D21797FA300420147 /* MarvelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E846402C21797FA300420147 /* MarvelAppUITests.swift */; };
+		E8807BDE217A4AC500E16EC6 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8807BDD217A4AC500E16EC6 /* Keys.plist */; };
 		E93F258C9600BF3C84B81BE1 /* Pods_MarvelAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60BF2385E97F641242354C8C /* Pods_MarvelAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		E846402821797FA300420147 /* MarvelAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E846402C21797FA300420147 /* MarvelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAppUITests.swift; sourceTree = "<group>"; };
 		E846402E21797FA300420147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8807BDD217A4AC500E16EC6 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		F011971E70D38DC208A3EA72 /* Pods-MarvelAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				E846401821797FA300420147 /* Info.plist */,
+				E8807BDD217A4AC500E16EC6 /* Keys.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8807BDE217A4AC500E16EC6 /* Keys.plist in Resources */,
 				E846401721797FA300420147 /* LaunchScreen.storyboard in Resources */,
 				E846401421797FA300420147 /* Assets.xcassets in Resources */,
 				E846401221797FA200420147 /* Main.storyboard in Resources */,
