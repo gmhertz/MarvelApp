@@ -155,8 +155,6 @@
 				E846403E217A02D700420147 /* Services */,
 				E846403D217A02B200420147 /* Supporting Files */,
 				E846403F217A02ED00420147 /* Resources */,
-				E846400E21797FA200420147 /* ViewController.swift */,
-				E846401021797FA200420147 /* Main.storyboard */,
 			);
 			path = MarvelApp;
 			sourceTree = "<group>";
@@ -189,6 +187,8 @@
 		E846403B217A028200420147 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E846401021797FA200420147 /* Main.storyboard */,
+				E846400E21797FA200420147 /* ViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -638,7 +638,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56DSU8JZV3;
 				INFOPLIST_FILE = "$(SRCROOT)/MarvelApp/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.GunterHertz.MarvelApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -654,7 +657,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56DSU8JZV3;
 				INFOPLIST_FILE = "$(SRCROOT)/MarvelApp/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.GunterHertz.MarvelApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -671,7 +677,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56DSU8JZV3;
 				INFOPLIST_FILE = MarvelAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.GunterHertz.MarvelAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -689,7 +699,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56DSU8JZV3;
 				INFOPLIST_FILE = MarvelAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.GunterHertz.MarvelAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -706,7 +720,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56DSU8JZV3;
 				INFOPLIST_FILE = MarvelAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.GunterHertz.MarvelAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -723,7 +741,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56DSU8JZV3;
 				INFOPLIST_FILE = MarvelAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.GunterHertz.MarvelAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
