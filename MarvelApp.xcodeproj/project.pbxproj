@@ -192,6 +192,8 @@
 		E846403A217A027800420147 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				E8B515F4217AE92D00935817 /* CharactersListViewModel.swift */,
+				E8B515FA217AF02F00935817 /* CharacterDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -533,14 +535,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E846401021797FA200420147 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E846401121797FA200420147 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E846401521797FA300420147 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
