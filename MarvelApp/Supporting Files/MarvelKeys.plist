@@ -3,8 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>publicKey</key>
-	<string>INSERT YOUR PUBLIC KEY HERE</string>
+	<string>TYPE YOUR PUBLIC KEY HERE</string>
 	<key>privateKey</key>
-	<string>INSERT YOUR PRIVATE KEY HERE</string>
+	<string>TYPE YOUR PRIVATE KEY HERE</string>
 </dict>
 </plist>
