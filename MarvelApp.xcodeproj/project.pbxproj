@@ -19,6 +19,7 @@
 		E8807BDE217A4AC500E16EC6 /* MarvelKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8807BDD217A4AC500E16EC6 /* MarvelKeys.plist */; };
 		E8B515E1217A9C7700935817 /* MarvelCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B515E0217A9C7700935817 /* MarvelCharacter.swift */; };
 		E8B515E3217A9EA800935817 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B515E2217A9EA800935817 /* Thumbnail.swift */; };
+		E8B515E8217AD76800935817 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B515E7217AD76800935817 /* DateExtension.swift */; };
 		E93F258C9600BF3C84B81BE1 /* Pods_MarvelAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60BF2385E97F641242354C8C /* Pods_MarvelAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		E8807BDD217A4AC500E16EC6 /* MarvelKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MarvelKeys.plist; sourceTree = "<group>"; };
 		E8B515E0217A9C7700935817 /* MarvelCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacter.swift; sourceTree = "<group>"; };
 		E8B515E2217A9EA800935817 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
+		E8B515E7217AD76800935817 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = MarvelApp/Extensions/DateExtension.swift; sourceTree = SOURCE_ROOT; };
 		F011971E70D38DC208A3EA72 /* Pods-MarvelAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 		E846400B21797FA200420147 /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
+				E8B515E6217AC6B600935817 /* Extensions */,
 				E846400C21797FA200420147 /* AppDelegate.swift */,
 				E846403C217A028A00420147 /* Models */,
 				E846403B217A028200420147 /* Views */,
@@ -219,6 +222,15 @@
 				E846401521797FA300420147 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E8B515E6217AC6B600935817 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E8B515E7217AD76800935817 /* DateExtension.swift */,
+			);
+			name = Extensions;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E846400F21797FA200420147 /* ViewController.swift in Sources */,
+				E8B515E8217AD76800935817 /* DateExtension.swift in Sources */,
 				E846400D21797FA200420147 /* AppDelegate.swift in Sources */,
 				E8B515E3217A9EA800935817 /* Thumbnail.swift in Sources */,
 				E8B515E1217A9C7700935817 /* MarvelCharacter.swift in Sources */,
