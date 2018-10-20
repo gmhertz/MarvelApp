@@ -2,13 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SchemeUserState</key>
-	<dict>
-		<key>MarvelApp.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
-		</dict>
-	</dict>
+	<key>publicKey</key>
+	<string>TYPE YOUR PUBLIC KEY HERE</string>
+	<key>privateKey</key>
+	<string>TYPE YOUR PRIVATE KEY HERE</string>
 </dict>
 </plist>
