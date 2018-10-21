@@ -13,22 +13,39 @@ import RxSwift
 class CharactersListViewModel {
     // MARK: private properties
     private let disposeBag = DisposeBag()
-    private var service: MarvelService
-    
-    private let data = BehaviorSubject<[CharacterData]>(value: [])
+    private var service = MarvelService()
+    private var characters = [MarvelCharacter]()
     
     
     // MARK: output
+    var data = BehaviorSubject<[SectionOfCharacterDataInfo]>(value: [])
     var selectedCharacter = PublishSubject<IndexPath>()
-    var characters: Observable<[CharacterData]> {
-        return data
-    }
 
     init() {
-        service = MarvelService()
+        self.loadMoreData()
     }
- 
+    
+    // MARK: related to bind
+    
+    
+    func loadMoreData() {
+        service.requestCharacters { err, completion in
+            if err != nil {
+                //show to interface in some way
+            } else {
+                if let newCharacters = completion {
+                    self.characters.append(contentsOf: newCharacters)
+                    let newSections = [SectionOfCharacterDataInfo(items: self.characters.map { CharacterData(name: $0.name,
+                                                                                                             image:$0.thumbnail,
+                                                                                                             id: $0.id)})]
+                    self.data.onNext(newSections)
+                }
+            }
+        }
+    }
+    
 }
+
 
 
 // MARK: RxDatasource representation
@@ -43,8 +60,8 @@ struct SectionOfCharacterDataInfo: Equatable {
 struct CharacterData: Equatable {
     let name: String
     let image: Thumbnail
-    let id: String
-    
+    let id: Int
+
     static func == (lhs: CharacterData, rhs: CharacterData) -> Bool {
         return lhs.id == rhs.id && lhs.name == rhs.name
     }
