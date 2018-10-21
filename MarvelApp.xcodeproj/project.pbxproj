@@ -16,7 +16,6 @@
 		E846402D21797FA300420147 /* MarvelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E846402C21797FA300420147 /* MarvelAppUITests.swift */; };
 		E8807BDE217A4AC500E16EC6 /* MarvelKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8807BDD217A4AC500E16EC6 /* MarvelKeys.plist */; };
 		E8B515E1217A9C7700935817 /* MarvelCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B515E0217A9C7700935817 /* MarvelCharacter.swift */; };
-		E8B515E3217A9EA800935817 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B515E2217A9EA800935817 /* Thumbnail.swift */; };
 		E8B515E5217AC5B500935817 /* MarvelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B515E4217AC5B500935817 /* MarvelService.swift */; };
 		E8B515E8217AD76800935817 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B515E7217AD76800935817 /* DateExtension.swift */; };
 		E8B515ED217ADCA400935817 /* CharactersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B515EB217ADCA400935817 /* CharactersListView.swift */; };
@@ -69,7 +68,6 @@
 		E846402E21797FA300420147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8807BDD217A4AC500E16EC6 /* MarvelKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MarvelKeys.plist; sourceTree = "<group>"; };
 		E8B515E0217A9C7700935817 /* MarvelCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacter.swift; sourceTree = "<group>"; };
-		E8B515E2217A9EA800935817 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
 		E8B515E4217AC5B500935817 /* MarvelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelService.swift; sourceTree = "<group>"; };
 		E8B515E7217AD76800935817 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = MarvelApp/Extensions/DateExtension.swift; sourceTree = SOURCE_ROOT; };
 		E8B515EB217ADCA400935817 /* CharactersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListView.swift; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				E8B515E0217A9C7700935817 /* MarvelCharacter.swift */,
-				E8B515E2217A9EA800935817 /* Thumbnail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -486,11 +483,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8B515FD217B7D8C00935817 /* ModelAccessService.swift in Sources */,
 				E8B515F5217AE92D00935817 /* CharactersListViewModel.swift in Sources */,
 				E8B515E8217AD76800935817 /* DateExtension.swift in Sources */,
 				E8B515F8217AECF400935817 /* CharacterTableViewCell.swift in Sources */,
 				E846400D21797FA200420147 /* AppDelegate.swift in Sources */,
-				E8B515E3217A9EA800935817 /* Thumbnail.swift in Sources */,
 				E8B515ED217ADCA400935817 /* CharactersListView.swift in Sources */,
 				E8B515E5217AC5B500935817 /* MarvelService.swift in Sources */,
 				E8B515FB217AF02F00935817 /* CharacterDetailViewModel.swift in Sources */,
