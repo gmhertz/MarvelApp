@@ -14,8 +14,8 @@ import UIKit
 class CharactersListView: UIViewController {
     // MARK: Outlet definitions
     @IBOutlet weak private var charactersTableView: UITableView! {
-        didSet {
-            charactersTableView.estimatedRowHeight = 150
+        didSet {            
+            charactersTableView.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "characterCell")
         }
     }
     
@@ -30,10 +30,6 @@ class CharactersListView: UIViewController {
         self.navigationController?.navigationBar.barStyle = .black
         self.view.backgroundColor = UIColor.darkBlue
         
-        
-        charactersTableView.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "characterCell")
-
-        
         let dataSource = RxTableViewSectionedReloadDataSource<SectionOfCharacterDataInfo>(configureCell: { (_, charactersTableView, indexPath, item) -> UITableViewCell in
             if let cell = charactersTableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as? CharacterTableViewCell {
                 cell.setup(name: item.name, thumbnail: item.image)
@@ -47,7 +43,16 @@ class CharactersListView: UIViewController {
             .bind(to: charactersTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
-        charactersTableView.rx.itemSelected.bind(to: viewModel.selectedCharacter).disposed(by: disposeBag)
+        charactersTableView.rx.itemSelected
+            .bind(to: viewModel.selectedCharacter)
+            .disposed(by: disposeBag)
+        
+        charactersTableView.rx.didScroll
+            .map { [unowned self] _ in self.charactersTableView.isBouncingBottom }
+            .bind(to: viewModel.shouldLoadMoreCharacters )
+            .disposed(by: disposeBag)
+        
+        
     }
 }
 

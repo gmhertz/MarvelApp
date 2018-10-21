@@ -16,17 +16,16 @@ class CharactersListViewModel {
     private var service = MarvelService()
     private var characters = [MarvelCharacter]()
     
-    
     // MARK: output
     var data = BehaviorSubject<[SectionOfCharacterDataInfo]>(value: [])
     var selectedCharacter = PublishSubject<IndexPath>()
-
+    var shouldLoadMoreCharacters = PublishSubject<Bool>()
+    
     init() {
         self.loadMoreData()
+        
+        shouldLoadMoreCharacters.bind { _ in self.loadMoreData() }.disposed(by: disposeBag)
     }
-    
-    // MARK: related to bind
-    
     
     func loadMoreData() {
         service.requestCharacters { err, completion in
@@ -45,8 +44,6 @@ class CharactersListViewModel {
     }
     
 }
-
-
 
 // MARK: RxDatasource representation
 struct SectionOfCharacterDataInfo: Equatable {
