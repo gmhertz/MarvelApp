@@ -14,7 +14,7 @@ import UIKit
 class CharactersListView: UIViewController {
     // MARK: Outlet definitions
     @IBOutlet weak private var charactersTableView: UITableView! {
-        didSet {            
+        didSet {
             charactersTableView.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "characterCell")
         }
     }
@@ -28,7 +28,8 @@ class CharactersListView: UIViewController {
         super.viewDidLoad()
         self.title = "Characters List"
         self.navigationController?.navigationBar.barStyle = .black
-        self.view.backgroundColor = UIColor.darkBlue
+        
+        charactersTableView.rx.setDelegate(self).disposed(by: disposeBag)
         
         let dataSource = RxTableViewSectionedReloadDataSource<SectionOfCharacterDataInfo>(configureCell: { (_, charactersTableView, indexPath, item) -> UITableViewCell in
             if let cell = charactersTableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as? CharacterTableViewCell {
@@ -56,3 +57,8 @@ class CharactersListView: UIViewController {
     }
 }
 
+extension CharactersListView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+}
