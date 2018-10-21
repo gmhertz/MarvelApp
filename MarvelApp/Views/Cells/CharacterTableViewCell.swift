@@ -9,16 +9,21 @@
 import UIKit
 
 class CharacterTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet weak var characterImage: UIImageView!
+    
+    @IBOutlet weak var characterName: UILabel! {
+        didSet {
+            characterName.textColor = .white
+        }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.backgroundColor = UIColor.softBlue
+    }
+
+    func setup(name: String, thumbnail: Thumbnail) {
+        self.characterName.text = name
+        self.characterImage.getImageFromURL(url: thumbnail.fullPath(variant: .portrait_incredible))
+    }
 }
