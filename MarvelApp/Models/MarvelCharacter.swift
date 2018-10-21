@@ -8,10 +8,6 @@
 
 import Foundation
 
-protocol JSONDecodable {
-    init?(JSON: Any)
-}
-
 // MARK: Marvel Character
 struct MarvelCharacter: Decodable {
     let id: Int?
