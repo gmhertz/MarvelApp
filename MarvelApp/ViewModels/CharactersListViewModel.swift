@@ -21,10 +21,8 @@ class CharactersListViewModel {
     var selectedCharacter = PublishSubject<IndexPath>()
     var shouldLoadMoreCharacters = PublishSubject<Bool>()
     
-    init() {
-        self.loadMoreData()
-        
-        shouldLoadMoreCharacters.bind { _ in self.loadMoreData() }.disposed(by: disposeBag)
+    init() {        
+        shouldLoadMoreCharacters.distinctUntilChanged().bind { _ in self.loadMoreData() }.disposed(by: disposeBag)
     }
     
     func loadMoreData() {
