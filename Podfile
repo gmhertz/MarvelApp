@@ -6,7 +6,6 @@ target 'MarvelApp' do
   use_frameworks!
 
   pod 'Alamofire', '~> 4.7'
-  pod 'Moya', '~> 11.0'
   pod 'CryptoSwift'
   pod 'RxSwift', '~> 4.0'
   pod 'RxCocoa', '~> 4.0'
