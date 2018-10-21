@@ -15,33 +15,39 @@ class CharactersListView: UIViewController {
     // MARK: Outlet definitions
     @IBOutlet weak private var charactersTableView: UITableView! {
         didSet {
-            let cell = UINib(nibName: "CharacterTableViewCell", bundle: nil)
-            charactersTableView.register(cell, forCellReuseIdentifier: "characterCell")
+            charactersTableView.estimatedRowHeight = 150
         }
     }
     
-//    private var dataSource = RxTableViewSectionedReloadDataSource<SectionModel<MarvelCharacter>>()
     // MARK:
     var viewModel: CharactersListViewModel = CharactersListViewModel()
     let disposeBag: DisposeBag = DisposeBag()
+    var characterDetails = PublishSubject<MarvelCharacter>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Characters List"
+        self.navigationController?.navigationBar.barStyle = .black
+        self.view.backgroundColor = UIColor.darkBlue
         
-        _ = RxTableViewSectionedReloadDataSource<SectionOfCharacterDataInfo>(configureCell: { (_, charactersTableView, indexPath, item) -> UITableViewCell in
-            // TO DO: CONFIGURE THE CELL AND REPLACE THIS CODE ABOVE
-            let cell = UITableViewCell(style: .default, reuseIdentifier: "teste")
-            cell.textLabel?.text = "agora vai"
-            return cell
+        
+        charactersTableView.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "characterCell")
+
+        
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionOfCharacterDataInfo>(configureCell: { (_, charactersTableView, indexPath, item) -> UITableViewCell in
+            if let cell = charactersTableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as? CharacterTableViewCell {
+                cell.setup(name: item.name, thumbnail: item.image)
+                return cell
+            } else {
+                fatalError("ERROR ON CELL LOADING")
+            }
         })
         
+        viewModel.data
+            .bind(to: charactersTableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+        
         charactersTableView.rx.itemSelected.bind(to: viewModel.selectedCharacter).disposed(by: disposeBag)
-        
-        
-        
     }
-    
-    
 }
 

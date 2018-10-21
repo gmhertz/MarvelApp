@@ -10,11 +10,11 @@ import Foundation
 
 // MARK: Marvel Character
 struct MarvelCharacter: Decodable {
-    let id: Int?
-    let name: String?
+    let id: Int
+    let name: String
     let description: String?
     let comics: [ComicBook]?
-    let thumbnail: Thumbnail?
+    let thumbnail: Thumbnail
 }
 
 extension MarvelCharacter {
@@ -27,10 +27,10 @@ extension MarvelCharacter {
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        id = try values.decodeIfPresent(Int.self, forKey: .id)
-        name = try values.decodeIfPresent(String.self, forKey: .name)
+        id = try values.decode(Int.self, forKey: .id)
+        name = try values.decode(String.self, forKey: .name)
         description = try values.decodeIfPresent(String.self, forKey: .description)
-        thumbnail = try values.decodeIfPresent(Thumbnail.self, forKey: .thumbnail)
+        thumbnail = try values.decode(Thumbnail.self, forKey: .thumbnail)
         
         let internContainer = try values.nestedContainer(keyedBy: ComicsCodingKeys.self, forKey: .comics)
         
@@ -46,8 +46,12 @@ enum ImageVariant: String {
 }
 
 struct Thumbnail: Decodable {
-    var path: String?
-    var `extension`: String?
+    var path: String
+    var `extension`: String
+    
+    func fullPath(variant: ImageVariant)-> String {
+        return path + "/" + variant.rawValue + "." + `extension`
+    }
 }
 
 // MARK: Comic
@@ -56,4 +60,8 @@ struct ComicBook: Decodable {
     var name: String?
 }
 
-
+extension MarvelCharacter : Equatable {
+    static func == (lhs: MarvelCharacter, rhs: MarvelCharacter) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
