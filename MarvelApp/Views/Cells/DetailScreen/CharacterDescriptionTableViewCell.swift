@@ -9,7 +9,8 @@
 import UIKit
 
 class CharacterDescriptionTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -17,8 +18,9 @@ class CharacterDescriptionTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    func setup(description: String){
+        descriptionTextView.text = description
+    }
 }

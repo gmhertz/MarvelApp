@@ -9,7 +9,8 @@
 import UIKit
 
 class CharacterComicsTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var comicTitleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +22,7 @@ class CharacterComicsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setup(comicName: String) {
+        comicTitleLabel.text = comicName
+    }
 }
