@@ -12,7 +12,9 @@ import UIKit
 extension UIImageView {
     func getImageFromURL(url: String) {
         if let url = URL(string: url) {
-            self.kf.setImage(with: ImageResource(downloadURL: url))
+            self.kf.setImage(with: ImageResource(downloadURL: url),
+                             placeholder: UIImage(named: "marvelLogo"))
+           
         }
     }
 }

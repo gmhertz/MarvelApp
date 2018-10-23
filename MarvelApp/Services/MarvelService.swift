@@ -78,7 +78,7 @@ class MarvelService {
                                 completion(nil,persons)
                             }
                         }
-                        completion(ErrorTypes.parseError, nil)
+                        //completion(ErrorTypes.parseError, nil)
                 case .failure(let error):
                     print(error.localizedDescription)
                     completion(error, nil)

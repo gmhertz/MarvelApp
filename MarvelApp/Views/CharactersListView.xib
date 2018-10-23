@@ -11,8 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharactersListView" customModule="MarvelApp" customModuleProvider="target">
             <connections>
-                <outlet property="CharactersTableView" destination="vFp-Tl-QCG" id="UGF-p3-0Me"/>
-                <outlet property="charactersTableView" destination="vFp-Tl-QCG" id="dH0-KB-R5P"/>
+                <outlet property="charactersTableView" destination="cX3-PE-KUQ" id="7g3-Rx-eSH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,18 +20,21 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vFp-Tl-QCG">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cX3-PE-KUQ">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" red="0.13725490200000001" green="0.1764705882" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.13725490196078433" green="0.1764705882352941" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vFp-Tl-QCG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3W4-ir-zOC"/>
-                <constraint firstItem="vFp-Tl-QCG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="NSz-FR-GcB"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vFp-Tl-QCG" secondAttribute="trailing" id="WAI-cg-3FG"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vFp-Tl-QCG" secondAttribute="bottom" id="bxZ-E0-HTN"/>
+                <constraint firstItem="cX3-PE-KUQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="RmF-Cd-s20"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cX3-PE-KUQ" secondAttribute="bottom" id="Wa3-Y5-xAg"/>
+                <constraint firstItem="cX3-PE-KUQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cge-2W-wUB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cX3-PE-KUQ" secondAttribute="trailing" id="wqs-Op-wPx"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

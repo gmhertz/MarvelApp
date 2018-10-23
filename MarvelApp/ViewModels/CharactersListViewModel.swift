@@ -16,22 +16,36 @@ class CharactersListViewModel {
     private var service = MarvelService()
     private var characters = [MarvelCharacter]()
     
-    
     // MARK: output
     var data = BehaviorSubject<[SectionOfCharacterDataInfo]>(value: [])
     var selectedCharacter = PublishSubject<IndexPath>()
-
+    var shouldLoadMoreCharacters = PublishSubject<Bool>()
+    var characterToDetail = PublishSubject<MarvelCharacter>()
+    var error = ReplaySubject<String>.create(bufferSize: 1)
+    
     init() {
         self.loadMoreData()
+        
+        shouldLoadMoreCharacters
+            .distinctUntilChanged()
+            .bind { _ in self.loadMoreData() }
+            .disposed(by: disposeBag)
+        
+        selectedCharacter
+            .map { self.characters[$0.row] }
+            .bind(to: self.characterToDetail)
+            .disposed(by: disposeBag)
     }
-    
-    // MARK: related to bind
-    
     
     func loadMoreData() {
         service.requestCharacters { err, completion in
             if err != nil {
+                //error fetch
                 //show to interface in some way
+                guard let err = err else {
+                    return
+                }
+                self.error.onNext(err.localizedDescription)
             } else {
                 if let newCharacters = completion {
                     self.characters.append(contentsOf: newCharacters)
@@ -45,8 +59,6 @@ class CharactersListViewModel {
     }
     
 }
-
-
 
 // MARK: RxDatasource representation
 struct SectionOfCharacterDataInfo: Equatable {
