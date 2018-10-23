@@ -281,8 +281,7 @@
 				E813E943217F9E86003D331D /* UIImageViewExtension.swift */,
 				E813E945217F9E86003D331D /* UIScroolViewExtension.swift */,
 			);
-			name = Extensions;
-			path = "New Group";
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E8B515F3217ADCC200935817 /* Cells */ = {
