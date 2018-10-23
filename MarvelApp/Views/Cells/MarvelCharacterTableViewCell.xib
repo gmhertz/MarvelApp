@@ -21,7 +21,7 @@
                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Byw-xk-xVD">
                         <rect key="frame" x="26" y="21" width="249" height="108"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marvel" translatesAutoresizingMaskIntoConstraints="NO" id="yKJ-TU-XpX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yKJ-TU-XpX">
                                 <rect key="frame" x="10" y="16.5" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="W3j-eQ-rmD"/>
@@ -67,7 +67,4 @@
             <point key="canvasLocation" x="135.19999999999999" y="202.39880059970017"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="marvel" width="409.60000610351562" height="409.60000610351562"/>
-    </resources>
 </document>
