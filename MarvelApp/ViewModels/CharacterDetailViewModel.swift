@@ -31,8 +31,7 @@ class CharacterDetailViewModel {
             .disposed(by: disposeBag)
         
         marvelCharacter
-            .map { $0.description ?? "There is no available description" }
-            .debug("teste")
+            .map { $0.description ?? ""}
             .bind(to: description)
             .disposed(by: disposeBag)
         
@@ -43,13 +42,11 @@ class CharacterDetailViewModel {
         
         marvelCharacter
             .map { $0.name }
-            .debug("name")
             .bind(to: name)
             .disposed(by: disposeBag)
         
         
         Observable.zip(description,image,comics)
-            .debug("CRIANDO SECTION")
             .subscribe(onNext: { chardDesc, image, comicList in
                 let sections: [MultipleSectionModel] = [
                     .CharacterImageSection(title: "", items: [ .ThumbnailItem(thumbnail: image)]),
