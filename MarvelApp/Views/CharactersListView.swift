@@ -66,6 +66,19 @@ class CharactersListView: UIViewController {
                 let characterDetailVC = CharacterDetailView.with(detailViewModel)
                 self.navigationController?.pushViewController(characterDetailVC, animated: true)
             }).disposed(by: disposeBag)
+        
+        viewModel.error
+            .subscribe(onNext: { msg in
+                let fetchErrorAlert: UIAlertController = UIAlertController(title: "Ooops", message: msg, preferredStyle: .alert)
+                self.present(fetchErrorAlert, animated: true, completion: nil)
+                
+                let retryAction = UIAlertAction(title: "Retry", style: .default, handler: { _ in
+                    self.viewModel.loadMoreData()
+                })
+                
+                fetchErrorAlert.addAction(retryAction)
+            })
+            .disposed(by: disposeBag)
     }
     
     

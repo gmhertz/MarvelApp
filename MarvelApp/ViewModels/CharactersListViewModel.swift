@@ -21,6 +21,7 @@ class CharactersListViewModel {
     var selectedCharacter = PublishSubject<IndexPath>()
     var shouldLoadMoreCharacters = PublishSubject<Bool>()
     var characterToDetail = PublishSubject<MarvelCharacter>()
+    var error = ReplaySubject<String>.create(bufferSize: 1)
     
     init() {
         self.loadMoreData()
@@ -41,6 +42,10 @@ class CharactersListViewModel {
             if err != nil {
                 //error fetch
                 //show to interface in some way
+                guard let err = err else {
+                    return
+                }
+                self.error.onNext(err.localizedDescription)
             } else {
                 if let newCharacters = completion {
                     self.characters.append(contentsOf: newCharacters)
