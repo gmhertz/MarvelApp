@@ -31,6 +31,9 @@ After that, open the project xcworkspace and execute.
 * [RxSwift](https://github.com/ReactiveX/RxSwift) 
 * [RxSwift-DataSources](https://github.com/RxSwiftCommunity/RxDataSources)
 
+### Code Coverage
+The code coverage is currently in 45.5%.
 
+None UI test was done, the test was made on service and decoding struct.
 
 ### Enjoy
