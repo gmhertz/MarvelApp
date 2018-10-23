@@ -19,8 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
         charListViewController = CharactersListView()
+        
         navigationController = UINavigationController(rootViewController: charListViewController!)
+        //Block to configure navigation bar
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = UIColor.darkBlue
+        navigationController?.view.backgroundColor = UIColor.darkBlue
+        navigationController?.navigationBar.barStyle = .blackOpaque
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = .white
+        
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
