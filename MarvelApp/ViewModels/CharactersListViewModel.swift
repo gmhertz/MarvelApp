@@ -20,14 +20,26 @@ class CharactersListViewModel {
     var data = BehaviorSubject<[SectionOfCharacterDataInfo]>(value: [])
     var selectedCharacter = PublishSubject<IndexPath>()
     var shouldLoadMoreCharacters = PublishSubject<Bool>()
+    var characterToDetail = PublishSubject<MarvelCharacter>()
     
-    init() {        
-        shouldLoadMoreCharacters.distinctUntilChanged().bind { _ in self.loadMoreData() }.disposed(by: disposeBag)
+    init() {
+        self.loadMoreData()
+        
+        shouldLoadMoreCharacters
+            .distinctUntilChanged()
+            .bind { _ in self.loadMoreData() }
+            .disposed(by: disposeBag)
+        
+        selectedCharacter
+            .map { self.characters[$0.row] }
+            .bind(to: self.characterToDetail)
+            .disposed(by: disposeBag)
     }
     
     func loadMoreData() {
         service.requestCharacters { err, completion in
             if err != nil {
+                //error fetch
                 //show to interface in some way
             } else {
                 if let newCharacters = completion {
