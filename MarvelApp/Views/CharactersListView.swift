@@ -15,10 +15,7 @@ class CharactersListView: UIViewController {
     // MARK: Outlet definitions
     @IBOutlet weak private var charactersTableView: UITableView! {
         didSet {
-            charactersTableView.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "characterCell")
-            
             charactersTableView.register(UINib(nibName: "MarvelCharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "marvelCharacterCell")
-//            charactersTableView.register(MarvelCharacterTableViewCell.self, forCellReuseIdentifier: "marvelCharacterCell")
         }
     }
     
