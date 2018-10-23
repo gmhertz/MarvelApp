@@ -21,6 +21,10 @@ class CharacterDescriptionTableViewCell: UITableViewCell {
     }
     
     func setup(description: String){
-        descriptionTextView.text = description
+        if description.isEmpty {
+            descriptionTextView.text = "There is no available description."
+        } else {
+            descriptionTextView.text = description
+        }
     }
 }
