@@ -11,8 +11,8 @@ Through terminal go to the project folder and execute the following command:
 ```
 $ pod install
 ```
-## Attention - You need get marvel api keys
-They can be obtained from [marvel's website portal](https://developer.marvel.com/account)
+## Attention - You need get Marvel API keys
+They can be obtained from [Marvel's website portal](https://developer.marvel.com/account)
 
 ![SpiderPerfection](https://media.makeameme.org/created/perfection-5b04e0.jpg)
 
@@ -36,4 +36,4 @@ The code coverage is currently in 45.5%.
 
 None UI test was done, the test was made on service and decoding struct.
 
-### Enjoy
+### Enjoy!
