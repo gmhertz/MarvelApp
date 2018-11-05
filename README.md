@@ -32,7 +32,7 @@ After that, open the project xcworkspace and execute.
 * [RxSwift-DataSources](https://github.com/RxSwiftCommunity/RxDataSources)
 
 ### Code Coverage
-The code coverage is currently in 45.5%.
+The code coverage is currently in 15.5%.
 
 None UI test was done, the test was made on service and decoding struct.
 
