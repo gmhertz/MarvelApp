@@ -27,7 +27,7 @@ After that, open the project xcworkspace and execute.
 * [Alamofire](https://github.com/Alamofire/Alamofire)
 * [CryptoSwift](https://github.com/krzyzanowskim/CryptoSwift)
 * [Kingfisher](https://github.com/onevcat/Kingfisher)
-* [Kingfisher](https://github.com/ReactiveX/RxSwift/tree/master/RxCocoa)
+* [RxCocoa](https://github.com/ReactiveX/RxSwift/tree/master/RxCocoa)
 * [RxSwift](https://github.com/ReactiveX/RxSwift) 
 * [RxSwift-DataSources](https://github.com/RxSwiftCommunity/RxDataSources)
 
